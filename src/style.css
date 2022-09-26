@@ -1,7 +1,77 @@
+* {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
 body {
   background-color: bisque;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
-  color: red;
+  width: 100%;
+  font-size: 16px;
+  align-self: flex-start;
+  font-weight: 500;
+  padding: 1em;
+  border-bottom: 1px solid lightgrey;
+  margin: 0;
+}
+
+#listcontainer {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 3px 3px 3px lightgrey, -3px 3px 3px lightgrey, 3px 3px 3px lightgrey;
+  width: 60%;
+  align-items: center;
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid lightgrey;
+}
+
+.inputcontainer {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+}
+
+input {
+  border: none;
+  width: 100%;
+  padding: 1em;
+}
+
+.task {
+  margin-right: 1em;
+  width: auto;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.listbutton {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  color: grey;
+  padding: 1em;
+}
+
+#clear {
+  width: 100%;
+  padding: 1em;
+  background-color: antiquewhite;
+}
+
+#dynamiccontainer {
+  width: 100%;
 }
