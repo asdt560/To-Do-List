@@ -6,7 +6,26 @@ function Task(description, index) {
   this.index = index;
 }
 
-let tasknumber = 0;
+let tasknumber = 1;
+
+const arr = [
+  {
+    description: 'example task',
+    completed: false,
+    index: 0,
+  },
+];
+const tasklist = document.querySelector('#dynamiccontainer');
+window.localStorage.setItem('tasklist', JSON.stringify(arr));
+arr.forEach((item) => {
+  tasklist.innerHTML = `<div class="field">
+  <div class="inputcontainer">
+    <input type="checkbox" class="task" id=${item.index}>
+    <label for='label'${item.index}>${item.description}</label>
+  </div>
+  <button class="listbutton" type="button"><ion-icon name="ellipsis-vertical"></ion-icon></button>
+</div>`;
+});
 
 const record = () => {
   let arr = JSON.parse(window.localStorage.getItem('tasklist'));
@@ -20,7 +39,7 @@ const record = () => {
   tasklist.innerHTML += `<div class="field">
     <div class="inputcontainer">
       <input type="checkbox" class="task" id=${tasknumber}>
-      <label>${taskname}</label>
+      <label for=${tasknumber}>${taskname}</label>
     </div>
     <button class="listbutton" type="button"><ion-icon name="ellipsis-vertical"></ion-icon></button>
   </div>`;
@@ -44,8 +63,6 @@ document.querySelector('#clear').addEventListener('click', () => {
   clearer();
 });
 
-const boxes = document.querySelectorAll('.task');
-
 const complete = (boxIndex) => {
   const arr = JSON.parse(window.localStorage.getItem('tasklist'));
   arr.forEach((item) => {
@@ -61,7 +78,13 @@ const complete = (boxIndex) => {
   window.localStorage.setItem('tasklist', JSON.stringify(arr));
 };
 
-boxes.forEach((box) => box.addEventListener('change', (e) => {
-  const boxIndex = e.target.id;
-  complete(boxIndex);
-}));
+window.addEventListener('DOMContentLoaded', () => {
+  const boxes = document.querySelectorAll('.task');
+  boxes.forEach((box) => {
+    box.addEventListener('change', (e) => {
+      const boxIndex = e.target.id;
+      e.target.label.cssText = 'text-decoration = strikethrough';
+      complete(boxIndex);
+    });
+  });
+});
