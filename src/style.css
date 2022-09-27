@@ -58,6 +58,14 @@ button {
   background-color: transparent;
 }
 
+#taskenter {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  color: grey;
+  padding: 1em;
+}
+
 .listbutton {
   display: flex;
   align-items: center;
