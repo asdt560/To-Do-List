@@ -12,6 +12,13 @@ document.querySelector('#taskenter').addEventListener('click', () => {
   display();
 });
 
+document.querySelector('#form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const taskname = document.querySelector('#addTask').value;
+  list.add(taskname);
+  display();
+});
+
 const clearer = () => {
   let arr = JSON.parse(window.localStorage.getItem('tasklist'));
   let index = JSON.parse(window.localStorage.getItem('tasknumber'));

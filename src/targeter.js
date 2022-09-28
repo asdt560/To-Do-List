@@ -15,6 +15,7 @@ const editor = (target) => {
       e.preventDefault();
       console.log(target.firstChild);
       list.edit(target);
+      window.location.reload();
     }
   });
 };
