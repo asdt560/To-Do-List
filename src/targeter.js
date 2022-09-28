@@ -3,7 +3,6 @@ import changebutton from './changebutton.js';
 import { list } from './class.js';
 
 const editor = (target) => {
-  console.log(target);
   target.contentEditable = true;
   target.parentNode.parentNode.parentNode.classList.add('editable');
   target.focus();
@@ -13,7 +12,6 @@ const editor = (target) => {
   target.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      console.log(target.firstChild);
       list.edit(target);
       window.location.reload();
     }

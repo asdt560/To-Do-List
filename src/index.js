@@ -32,22 +32,6 @@ const clearer = () => {
 document.querySelector('#clear').addEventListener('click', () => {
   clearer();
 });
-/*
-const complete = (boxIndex) => {
-  const arr = JSON.parse(window.localStorage.getItem('tasklist'));
-  arr.forEach((item) => {
-    if (arr.indexOf(item) === boxIndex) {
-      if (item.completed === false) {
-        item.completed = true;
-      } else {
-        item.completed = false;
-      }
-      console.log(item);
-    }
-  });
-  window.localStorage.setItem('tasklist', JSON.stringify(arr));
-};
-*/
 
 window.addEventListener('load', () => {
   display();
@@ -58,17 +42,4 @@ window.addEventListener('load', () => {
       display();
     });
   });
-
-  /*
-  const boxes = document.querySelectorAll('.task');
-  boxes.forEach((box) => {
-    box.addEventListener('change', (e) => {
-      if (e.target.checked) {
-        const boxIndex = e.currentTarget.id;
-        e.target.parentNode.cssText = 'text-decoration = strikethrough';
-        complete(boxIndex);
-      }
-    });
-  });
-  */
 });
