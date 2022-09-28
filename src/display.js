@@ -8,7 +8,7 @@ const display = () => {
   arr.forEach((item) => {
     tasklist.innerHTML += `<div class="field" id=${item.index}>
     <div class="inputcontainer">
-      <label for=${item.index}><input type="checkbox" class="task">${item.description}</label>
+      <label for=${item.index}><input type="checkbox" class="task"><div class="tasktext">${item.description}</div></label>
     </div>
     <button class="listbutton" id=button${item.index} type="button"><ion-icon name="ellipsis-vertical"></ion-icon></button>
   </div>`;

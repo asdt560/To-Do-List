@@ -48,6 +48,14 @@ input {
   padding: 1em;
 }
 
+label {
+  display: flex;
+}
+
+.tasktext {
+  margin: 0;
+}
+
 .task {
   margin-right: 1em;
   width: auto;
@@ -82,4 +90,12 @@ button {
 
 #dynamiccontainer {
   width: 100%;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.editable {
+  background-color: rgb(255, 255, 100);
 }

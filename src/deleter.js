@@ -1,10 +1,11 @@
-import display from './display.js';
 import { list } from './record.js';
 
 const deleter = (item) => {
-  console.log(item.parentNode);
-  list.remove(item.parentNode.id);
-  display();
+  item.addEventListener('click', (e) => {
+    const item = e.target.parentNode;
+    console.log(item.parentNode.id);
+    list.remove(item.parentNode.id);
+  });
 };
 
 export default deleter;
