@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import targeter from './targeter.js';
 
 const tasklist = document.querySelector('#dynamiccontainer');

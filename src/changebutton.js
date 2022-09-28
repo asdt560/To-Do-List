@@ -1,5 +1,4 @@
 import { list } from './class.js';
-
 // eslint-disable-next-line import/no-cycle
 import display from './display.js';
 

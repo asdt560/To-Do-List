@@ -1,6 +1,10 @@
+// eslint-disable-next-line import/no-cycle
 import changebutton from './changebutton.js';
 
 import { list } from './class.js';
+
+// eslint-disable-next-line import/no-cycle
+import display from './display.js';
 
 const editor = (target) => {
   target.contentEditable = true;
@@ -13,7 +17,8 @@ const editor = (target) => {
     if (e.key === 'Enter') {
       e.preventDefault();
       list.edit(target);
-      window.location.reload();
+      display();
+      target.parentNode.parentNode.parentNode.classList.remove('editable');
     }
   });
 };
