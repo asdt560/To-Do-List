@@ -1,10 +1,10 @@
 import './style.css';
 
-import display from './display.js';
+import display from './modules/display.js';
 
-import changebutton from './changebutton.js';
+import changebutton from './modules/changebutton.js';
 
-import { list } from './class.js';
+import { list } from './modules/class.js';
 
 document.querySelector('#form').addEventListener('submit', (e) => {
   e.preventDefault();
