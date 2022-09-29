@@ -27,6 +27,7 @@ h1 {
   box-shadow: 3px 3px 3px lightgrey, -3px 3px 3px lightgrey, 3px 3px 3px lightgrey;
   width: 60%;
   align-items: center;
+  max-height: 95vh;
 }
 
 .field {
@@ -90,6 +91,7 @@ button {
 
 #dynamiccontainer {
   width: 100%;
+  overflow-y: auto;
 }
 
 .completed {
@@ -98,4 +100,13 @@ button {
 
 .editable {
   background-color: rgb(255, 255, 100);
+}
+
+.true {
+  text-decoration: line-through;
+}
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+ion-icon {
+  pointer-events: none;
 }
