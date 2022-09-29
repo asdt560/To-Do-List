@@ -11,6 +11,7 @@ document.querySelector('#form').addEventListener('submit', (e) => {
   const taskname = document.querySelector('#addTask').value;
   list.add(taskname);
   display();
+  e.target.reset();
 });
 
 document.querySelector('#clear').addEventListener('click', () => {
