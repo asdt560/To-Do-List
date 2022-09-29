@@ -3,11 +3,12 @@ import { list } from './class.js';
 import display from './display.js';
 
 const changebutton = (button) => {
+  button.title = 'Delete Task';
   const icon = button.firstChild;
   icon.setAttribute('name', 'trash-outline');
   button.addEventListener('click', (e) => {
     const item = e.target.parentNode;
-    list.remove(item.parentNode.id);
+    list.remove(item.id);
     display();
   });
 };
